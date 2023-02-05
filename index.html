@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <script src="js/random.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <p>Enter your text or URL.</p>
+        <input type="text" placeholder="Text or URL" id="qrText">
+        <div id="imgBox">
+            <img src="" id="qrImage">
+        </div>
+        <div>
+            <button onclick="generateQR()">Generate qr-code</button>
+        </div>
+        <button> Generate qr code </button>
+    </div>
+    <script>
+        let imBox = document.getElementById("imbox");
+        let qrText = document.getElementById("qrText");
+        let qrImage = document.getElementById("qrImage")
+
+        function generateQR(){
+        qrImage.scr = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
+        imgBox.classList.add("show-img");
+        }
+        </script>
+</body></html>
